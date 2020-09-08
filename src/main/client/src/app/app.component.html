@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, websockets!</h1>
+  <p class="lead">This is an Angular app that should demo how Websocket communication is done between client and server</p>
+  <hr class="my-4">
+  <p>*The server is a Spring Boot based application</p>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="marco-polo">Marco Polo</a>
+    </li>
+  </ul>
+</div>
+<div class="p-4">
+  <router-outlet></router-outlet>
+</div>
