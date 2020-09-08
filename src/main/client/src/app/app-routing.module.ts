@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {MarcoPoloComponent} from "./marco-polo/marco-polo.component";
+import {MarcoPoloSockjsComponent} from "./marco-polo-sockjs/marco-polo-sockjs.component";
 
 
 const routes: Routes = [
@@ -12,6 +13,9 @@ const routes: Routes = [
     path: 'marco-polo', component: MarcoPoloComponent
   },
   {
+    path: 'marco-polo-sockjs', component: MarcoPoloSockjsComponent
+  },
+  {
     path: '**', redirectTo: ''
   },
 ];
@@ -20,4 +24,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -15,6 +15,10 @@ public class MarcoWebSocketConfiguration implements WebSocketConfigurer {
     registry
         .addHandler(marcoWebSocketHandler(), "/websocket/marco")
         .setAllowedOrigins("*");
+    registry
+        .addHandler(marcoWebSocketHandler(), "/sockjs/marco")
+        .setAllowedOrigins("*")
+        .withSockJS();
   }
 
   @Bean

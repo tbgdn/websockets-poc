@@ -1,0 +1,30 @@
+<div>
+  <h3 class="display-4">Marco Polo <span class="h6 text-muted">(ping pong game)</span></h3>
+  <div class="mb-3">
+    <p class="mb-1">Status: <span [ngClass]="{'text-danger': !connected, 'text-success': connected}">{{connected ? 'Connected' : 'Disconnected'}}</span></p>
+    <button (click)="onConnectClick()" class="btn btn-outline-success mr-2">Connect</button>
+    <button (click)="onDisconnectClick()" class="btn btn-outline-warning mr-2">Disconnect</button>
+  </div>
+  <div class="mb-3">
+    <p class="mb-1">Game controls</p>
+    <button (click)="onStartClick()" class="btn btn-success mr-2">Start</button>
+    <button (click)="onStopClick()" class="btn btn-outline-danger">Stop</button>
+  </div>
+  <table class="table table-striped" *ngIf="messages.length > 0">
+    <caption>Messages exchanged between client and server</caption>
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Client</th>
+      <th scope="col">Server</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let message of messages; let $index = index">
+      <td>{{$index + 1}}</td>
+      <td>{{message.client}}</td>
+      <td>{{message.server}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
